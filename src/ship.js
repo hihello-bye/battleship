@@ -1,13 +1,20 @@
 function Ship(length) {
     let hits = 0;
 
-    function isSunk() {
+    function hit() {
+        if (hits < length) {
+            hits += 1;
+        }
+    }
+
+    function sunk() {
         return hits >= length;
     }
 
     return {
         length,
-        Sunk,
+        hit,
+        sunk,
     }
 }
 
