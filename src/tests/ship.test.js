@@ -17,4 +17,11 @@ describe('Ship', () => {
         ship.hit();
         expect(ship.sunk()).toBe(false);
     })
+
+    test('should sink when hit enough times' () {
+        const ship = Ship(2);
+        ship.hit();
+        ship.hit();
+        expect(ship.sunk()).toBe(true);
+    })
 })
