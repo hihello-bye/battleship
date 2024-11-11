@@ -1,4 +1,4 @@
-const Ship = require('..src/ship');
+const Ship = require('../ship.js');
 
 describe('Ship', () => {
     test('should initialize with the correct length', () => {
