@@ -24,4 +24,13 @@ describe('Ship', () => {
         ship.hit();
         expect(ship.sunk()).toBe(true);
     })
+
+    test('should not register more hits than its length', () => {
+        const ship = Ship(2);
+        ship.hit();
+        ship.hit();
+        ship.hit();
+        expect(ship.sunk()).toBe(true);
+
+    })
 })
