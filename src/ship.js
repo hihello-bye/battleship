@@ -7,7 +7,7 @@ function Ship(length) {
 
     return {
         length,
-        isSunk,
+        Sunk,
     }
 }
 

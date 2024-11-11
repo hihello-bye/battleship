@@ -9,6 +9,6 @@ describe('Ship', () => {
 
     test('Should not initially be sunk', () => {
         const ship = Ship(3);
-        expect(ship.isSunk()).toBe(false);
+        expect(ship.Sunk()).toBe(false);
     })
 })
