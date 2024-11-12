@@ -1,5 +1,6 @@
 const Gameboard = () => {
     const ships = [];
+    const missedShots = [];
 
     function placeShip(ship, startCoordinates, direction) {
         const coordinates= [];
@@ -19,7 +20,28 @@ const Gameboard = () => {
         return ships;
      }
 
-     return { placeShip, getShips };
+     function receiveAttack(coordinates) {
+        let hitShip = null;
+
+        ships.forEach(({ ship, coordinates: shipCoords }) => {
+            shipCoords.forEach((coord) => {
+                if (coord[0] === coordinates[0] && coord[1] === coordinates[1]) {
+                    ship.hit();
+                    hitShip = ship;
+                }
+            })
+        })
+
+        if (!hitShip) {
+            missedShots.push(coordinates);
+        }
+     }
+
+     function getMissedShots() {
+        return missedShots;
+     }
+
+     return { placeShip, receiveAttack, getMissedShots, getShips };
 }
 
 module.exports = Gameboard;
