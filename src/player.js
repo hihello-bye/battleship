@@ -11,7 +11,18 @@ const Player = (type) => {
         enemyGameboard.receiveAttack(coordinates);
     }
 
-    return { type, getGameboard, attack };
+    function randomAttack(enemyGameboard) {
+        const x = Math.floor(Math.random() * 10);
+        const y = Math.floor(Math.random() * 10);
+        enemyGameboard.receiveAttack([x, y]);
+    }
+
+    return {
+         type,
+         getGameboard,
+         attack,
+         randomAttack: type === 'computer' ? randomAttack : undefined,
+        }
 }
 
 module.exports = Player;
