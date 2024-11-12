@@ -6,7 +6,12 @@ const Player = (type) => {
     function getGameboard() {
         return gameboard;
     }
-    return { type, getGameboard };
+
+    function attack(enemyGameboard, coordinates) {
+        enemyGameboard.receiveAttack(coordinates);
+    }
+
+    return { type, getGameboard, attack };
 }
 
 module.exports = Player;
