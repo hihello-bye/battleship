@@ -41,7 +41,11 @@ const Gameboard = () => {
         return missedShots;
      }
 
-     return { placeShip, receiveAttack, getMissedShots, getShips };
+     function allShipsSunk() {
+        return ships.every(({ ship }) => ship.sunk());
+     }
+
+     return { placeShip, receiveAttack, getMissedShots, getShips, allShipsSunk };
 }
 
 module.exports = Gameboard;
