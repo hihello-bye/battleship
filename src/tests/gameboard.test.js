@@ -18,7 +18,7 @@ describe('Gameboard', () => {
         const ship = Ship(3);
         gameboard.placeShip(ship, [0, 0], 'horizontal');
 
-        gameboard.recieveAttack([0,1]);
+        gameboard.receiveAttack([0,1]);
         expect(ship.sunk()).toBe(false);
         expect(gameboard.getMissedShots()).toEqual([]);
     })
