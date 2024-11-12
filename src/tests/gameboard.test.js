@@ -22,4 +22,10 @@ describe('Gameboard', () => {
         expect(ship.sunk()).toBe(false);
         expect(gameboard.getMissedShots()).toEqual([]);
     })
+
+    test('should record a missed shot when no ship is at the coordinates', () => {
+        const gameboard = Gameboard();
+        gameboard.receiveAttack([5,5]);
+        expect(gameboard.getMissedShots()).toEqual([5,5]);
+    })
 })
