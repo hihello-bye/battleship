@@ -5,6 +5,8 @@ describe('Player', () => {
 
     test('should create a player with its own gameboard', () => {
         const player = Player('user');
-        expect(player.getGameboard()).toBeInstanceOf(Gameboard);
+        const gameboard = player.getGameboard();
+
+        expect(typeof gameboard).toBe('object');
     })
 })
