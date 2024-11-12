@@ -9,4 +9,12 @@ describe('Player', () => {
 
         expect(typeof gameboard).toBe('object');
     })
+
+    test('should make an attack on an enemy gameboard', () => {
+        const player = Player('user');
+        const enemyGameboard = Gameboard();
+
+        player.attack(enemyGameboard, [2, 3]);
+        expect(enemyGameboard.getMissedShots()).toEqual([[2,3]]);
+    })
 })
